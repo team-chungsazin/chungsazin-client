@@ -1,0 +1,19 @@
+---
+name: "📄 문서"
+about: "문서 작성/수정"
+title: "[docs] "
+labels: "📄 문서"
+assignees: "maehwasoo"
+---
+
+## 📄 Description
+
+문서 관련 내용을 작성해 주세요. (어떤 문서를 왜/어떻게 수정해야 하는지)
+
+## ✅ Tasks
+
+- [ ]
+
+## 📎 ETC
+
+- (참고 문서/가이드/링크 등)
