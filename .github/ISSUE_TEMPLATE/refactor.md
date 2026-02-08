@@ -1,0 +1,19 @@
+---
+name: "🛠️ 리팩터링"
+about: "리팩터링"
+title: "[refactor] "
+labels: "🛠️ 리팩터링"
+assignees: "maehwasoo"
+---
+
+## 📄 Description
+
+리팩터링할 코드와 이유를 작성해 주세요. (현재 문제점/개선 방향)
+
+## ✅ Tasks
+
+- [ ]
+
+## 📎 ETC
+
+- (성능 측정/관련 이슈/참고 문서/다이어그램 등)
