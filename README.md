@@ -23,6 +23,7 @@ Official web client for the ChungSazin poetry experience.
 | --- | --- |
 | **Package Manager** | ![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white) |
 | **Formatting / Linting** | ![Biome](https://img.shields.io/badge/Biome-60A5FA?style=for-the-badge) |
+| **Git Hooks** | ![lefthook](https://img.shields.io/badge/lefthook-000000?style=for-the-badge) |
 | **Build Tool** | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) |
 | **Version Control** | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) |
 
@@ -36,3 +37,5 @@ Official web client for the ChungSazin poetry experience.
 | `pnpm build-storybook` | Build static Storybook output |
 | `pnpm test` | Run Vitest test suite |
 | `pnpm lint` | Run Biome checks |
+| `pnpm check` | Run lint + test + build pipeline |
+| `pnpm prepare` | Install lefthook git hooks |
