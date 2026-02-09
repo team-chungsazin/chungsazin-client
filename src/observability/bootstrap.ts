@@ -1,8 +1,8 @@
 type Env = {
-  gaId?: string
-  sentryDsn?: string
-  clarityId?: string
-  otelEndpoint?: string
+  gaId: string | undefined
+  sentryDsn: string | undefined
+  clarityId: string | undefined
+  otelEndpoint: string | undefined
 }
 
 function readEnv(): Env {
