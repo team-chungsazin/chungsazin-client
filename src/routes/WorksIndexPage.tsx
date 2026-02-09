@@ -1,20 +1,28 @@
-import { Link } from 'react-router-dom'
-import { works } from '../data/works'
+import { works } from '@/data/works'
+import { page, subtitle, surfaceCard, workList } from '@/styles/app.css'
+import { LinkButton } from '@/ui/LinkButton'
+import { Text } from '@/ui/Text'
 
 export function WorksIndexPage() {
   return (
-    <main className="page page-index">
+    <main className={page}>
       <header>
-        <h1>Works</h1>
-        <p className="subtitle">Select a work to open the reader.</p>
+        <Text as="h1" roleType="display">
+          Works
+        </Text>
+        <Text roleType="caption">Select a work to open the reader.</Text>
       </header>
 
-      <ul className="work-list">
+      <ul className={workList}>
         {works.map((work) => (
-          <li key={work.id} className="work-card">
-            <h2>{work.title}</h2>
-            <p>{work.teaser}</p>
-            <Link to={`/works/${work.id}`}>Open #{work.id}</Link>
+          <li key={work.id} className={surfaceCard}>
+            <Text as="h2" roleType="title">
+              {work.title}
+            </Text>
+            <Text roleType="ui">{work.teaser}</Text>
+            <p className={subtitle}>
+              <LinkButton to={`/works/${work.id}`}>Open #{work.id}</LinkButton>
+            </p>
           </li>
         ))}
       </ul>
