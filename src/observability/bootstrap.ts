@@ -1,8 +1,8 @@
 type Env = {
-  gaId?: string
-  sentryDsn?: string
-  clarityId?: string
-  otelEndpoint?: string
+  gaId: string | undefined
+  sentryDsn: string | undefined
+  clarityId: string | undefined
+  otelEndpoint: string | undefined
 }
 
 function readEnv(): Env {
@@ -18,7 +18,6 @@ export function bootstrapObservability(): void {
   const env = readEnv()
   const enabled = Object.values(env).some(Boolean)
 
-  // Development visibility
   if (import.meta.env.DEV) {
     console.info('[observability] bootstrap', {
       enabled,

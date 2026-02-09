@@ -1,5 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
-import { workById } from '../data/works'
+import { workById } from '@/data/works'
+import { page, subtitle, surfaceCard } from '@/styles/app.css'
+import { Text } from '@/ui/Text'
 import { NotFoundPage } from './NotFoundPage'
 
 function isValidWorkId(id: string): boolean {
@@ -19,14 +21,18 @@ export function WorkReaderPage() {
   }
 
   return (
-    <main className="page page-reader">
+    <main className={page}>
       <header>
-        <h1>{work.title}</h1>
-        <p className="subtitle">Work ID: {work.id}</p>
+        <Text as="h1" roleType="title">
+          {work.title}
+        </Text>
+        <p className={subtitle}>Work ID: {work.id}</p>
       </header>
 
-      <article className="reader-frame">
-        <p>This is a placeholder reader surface for issue #3 routing validation.</p>
+      <article className={surfaceCard}>
+        <Text roleType="poem">
+          This is a placeholder reader surface for issue #5 baseline setup validation.
+        </Text>
       </article>
 
       <nav>

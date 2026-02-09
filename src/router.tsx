@@ -1,9 +1,10 @@
-import { Navigate, createBrowserRouter } from 'react-router-dom'
-import { NotFoundPage } from './routes/NotFoundPage'
-import { WorkReaderPage } from './routes/WorkReaderPage'
-import { WorksIndexPage } from './routes/WorksIndexPage'
+import type { RouteObject } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
+import { NotFoundPage } from '@/routes/NotFoundPage'
+import { WorkReaderPage } from '@/routes/WorkReaderPage'
+import { WorksIndexPage } from '@/routes/WorksIndexPage'
 
-export const router = createBrowserRouter([
+export const appRoutes: RouteObject[] = [
   {
     path: '/',
     element: <Navigate to="/works" replace />,
@@ -20,4 +21,6 @@ export const router = createBrowserRouter([
     path: '*',
     element: <NotFoundPage />,
   },
-])
+]
+
+export const router = createBrowserRouter(appRoutes)
