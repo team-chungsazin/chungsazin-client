@@ -1,10 +1,16 @@
 import { style } from '@vanilla-extract/css'
+import { media } from './media'
 import { vars } from './tokens.css'
 
 export const page = style({
   width: 'min(760px, 100%)',
   margin: '0 auto',
-  padding: `${vars.space.xl} ${vars.space.md}`,
+  padding: `${vars.space.lg} ${vars.space.md}`,
+  '@media': {
+    [media.md]: {
+      padding: `${vars.space.xl} ${vars.space.lg}`,
+    },
+  },
 })
 
 export const subtitle = style({
@@ -15,16 +21,29 @@ export const subtitle = style({
 
 export const pageHeader = style({
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'flex-start',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-start',
   gap: vars.space.md,
+  '@media': {
+    [media.md]: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      justifyContent: 'space-between',
+    },
+  },
 })
 
 export const headerNav = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: vars.space.sm,
-  justifyContent: 'flex-end',
+  justifyContent: 'flex-start',
+  '@media': {
+    [media.md]: {
+      justifyContent: 'flex-end',
+    },
+  },
 })
 
 export const navLink = style({
@@ -44,7 +63,12 @@ export const workList = style({
   margin: `${vars.space.lg} 0 0`,
   display: 'grid',
   gap: vars.space.md,
-  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+  '@media': {
+    [media.md]: {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+    },
+  },
 })
 
 export const surfaceCard = style({
@@ -57,6 +81,17 @@ export const surfaceCard = style({
 export const workListCard = style({
   display: 'grid',
   gap: vars.space.sm,
+})
+
+export const workDetailLayout = style({
+  display: 'grid',
+  gap: vars.space.md,
+  '@media': {
+    [media.md]: {
+      gridTemplateColumns: 'minmax(240px, 1fr) minmax(0, 2fr)',
+      alignItems: 'start',
+    },
+  },
 })
 
 export const workCoverImage = style({
