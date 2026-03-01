@@ -10,7 +10,7 @@ describe('router baseline', () => {
 
     render(<RouterProvider router={router} />)
 
-    expect(await screen.findByRole('heading', { name: 'Works' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: '시집 목록' })).toBeInTheDocument()
   })
 
   it('renders 404 for invalid id format', async () => {
