@@ -9,9 +9,11 @@ export function NotFoundPage({ reason }: NotFoundPageProps) {
   return (
     <main className={page}>
       <h1 className={pageNotFoundTitle}>404</h1>
-      <p>Page not found.</p>
-      {reason ? <p className={subtitle}>Reason: {reason}</p> : null}
-      <Link to="/works">Go to works</Link>
+      <p>페이지를 찾을 수 없습니다.</p>
+      {reason ? <p className={subtitle}>사유: {reason}</p> : null}
+      <p className={subtitle}>
+        <Link to="/">랜딩으로</Link> · <Link to="/works">메인으로</Link>
+      </p>
     </main>
   )
 }
