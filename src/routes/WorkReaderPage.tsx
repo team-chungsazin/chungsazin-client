@@ -10,6 +10,7 @@ import {
   subtitle,
   surfaceCard,
   workCoverImage,
+  workDetailLayout,
 } from '@/styles/app.css'
 import { Text } from '@/ui/Text'
 import { textRole } from '@/ui/Text.css'
@@ -54,7 +55,7 @@ export function WorkReaderPage() {
         </nav>
       </header>
 
-      <article className={surfaceCard} aria-label="시집 상세">
+      <article className={`${surfaceCard} ${workDetailLayout}`} aria-label="시집 상세">
         <img className={workCoverImage} src={work.cover.src} alt={work.cover.alt} />
 
         <section className={poemBlock} aria-label="글">
