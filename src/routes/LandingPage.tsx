@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useScroll } from '@/hooks/useScroll'
 import {
   ctaRow,
   headerNav,
@@ -6,6 +7,7 @@ import {
   navLink,
   page,
   pageHeader,
+  pageHeaderHidden,
   subtitle,
   surfaceCard,
   titleGroup,
@@ -14,9 +16,11 @@ import { LinkButton } from '@/ui/LinkButton'
 import { Text } from '@/ui/Text'
 
 export function LandingPage() {
+  const { isScrollingUp } = useScroll()
+
   return (
     <main className={page}>
-      <header className={pageHeader}>
+      <header className={`${pageHeader} ${!isScrollingUp ? pageHeaderHidden : ''}`}>
         <div className={titleGroup}>
           <Text as="h1" roleType="display">
             ChungSazin

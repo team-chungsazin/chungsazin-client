@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useScroll } from '@/hooks/useScroll'
 import {
   headerNav,
   navLink,
   page,
   pageHeader,
+  pageHeaderHidden,
   subtitle,
   surfaceCard,
   titleGroup,
@@ -11,9 +13,11 @@ import {
 import { Text } from '@/ui/Text'
 
 export function AboutPage() {
+  const { isScrollingUp } = useScroll()
+
   return (
     <main className={page}>
-      <header className={pageHeader}>
+      <header className={`${pageHeader} ${!isScrollingUp ? pageHeaderHidden : ''}`}>
         <div className={titleGroup}>
           <Text as="h1" roleType="display">
             About
