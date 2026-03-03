@@ -5,7 +5,10 @@ export function useIntersection<T extends HTMLElement>(options?: IntersectionObs
   const elementRef = useRef<T>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+      if (!entry) return
+
       if (entry.isIntersecting) {
         setIsIntersecting(true)
         // 한 번 나타나면 관찰 중지 (옵션)

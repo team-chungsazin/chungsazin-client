@@ -24,7 +24,7 @@ export function WorksIndexPage() {
       <header className={`${pageHeader} ${!isScrollingUp ? pageHeaderHidden : ''}`}>
         <div className={titleGroup}>
           <Text as="h1" roleType="display">
-            Archive
+            시집 목록
           </Text>
           <p className={subtitle}>시간이 머물다 간 문장들의 기록</p>
         </div>
