@@ -1,48 +1,76 @@
 import { Link } from 'react-router-dom'
-import { headerNav, navLink, page, pageHeader, subtitle, surfaceCard } from '@/styles/app.css'
+import {
+  headerNav,
+  navLink,
+  page,
+  pageHeader,
+  subtitle,
+  surfaceCard,
+  titleGroup,
+} from '@/styles/app.css'
 import { Text } from '@/ui/Text'
 
 export function AboutPage() {
   return (
     <main className={page}>
       <header className={pageHeader}>
-        <div>
+        <div className={titleGroup}>
           <Text as="h1" roleType="display">
-            어바웃
+            About
           </Text>
-          <p className={subtitle}>팀 소개</p>
+          <p className={subtitle}>청사진이 지향하는 가치</p>
         </div>
 
         <nav className={headerNav} aria-label="페이지 이동">
           <Link className={navLink} to="/">
-            랜딩
+            Home
           </Link>
           <Link className={navLink} to="/works">
-            메인
+            Archive
           </Link>
         </nav>
       </header>
 
-      <section className={surfaceCard}>
-        <Text as="h2" roleType="title">
-          ChungSazin
-        </Text>
-        <Text roleType="ui">
-          ChungSazin은 시와 그림을 한 편의 작품처럼 읽는 웹 시집 경험을 만들고 있습니다.
-        </Text>
-      </section>
+      <div style={{ display: 'grid', gap: '2rem' }}>
+        <section className={surfaceCard}>
+          <Text as="h2" roleType="title" style={{ marginBottom: '1rem' }}>
+            ChungSazin
+          </Text>
+          <Text roleType="ui">
+            청사진(ChungSazin)은 시와 그림을 한 편의 정제된 작품처럼 읽는 웹 시집 경험을 만듭니다.
+            우리는 디지털 환경에서도 종이가 주는 따뜻한 질감과 여백의 리듬을 느낄 수 있기를
+            바랍니다.
+          </Text>
+        </section>
 
-      <section className={surfaceCard}>
-        <Text as="h2" roleType="title">
-          우리가 중요하게 생각하는 것
-        </Text>
-        <ul>
-          <li>가독성: 먼저 읽히는 타이포그래피</li>
-          <li>여백: 리듬을 만드는 간격</li>
-          <li>접근성: 키보드·저모션 환경에서도 편안함</li>
-          <li>성능: 모바일에서도 부드러운 스크롤</li>
-        </ul>
-      </section>
+        <section className={surfaceCard}>
+          <Text as="h2" roleType="title" style={{ marginBottom: '1rem' }}>
+            Core Values
+          </Text>
+          <div style={{ display: 'grid', gap: '1rem' }}>
+            <div>
+              <Text roleType="ui" style={{ fontWeight: 700 }}>
+                가독성 (Readability)
+              </Text>
+              <Text roleType="caption">먼저 읽히고 깊게 남는 타이포그래피를 지향합니다.</Text>
+            </div>
+            <div>
+              <Text roleType="ui" style={{ fontWeight: 700 }}>
+                여백 (Whitespace)
+              </Text>
+              <Text roleType="caption">문장 사이의 간격이 만드는 고유한 리듬을 존중합니다.</Text>
+            </div>
+            <div>
+              <Text roleType="ui" style={{ fontWeight: 700 }}>
+                접근성 (Accessibility)
+              </Text>
+              <Text roleType="caption">
+                누구나 어떤 환경에서도 편안하게 시를 감상할 수 있어야 합니다.
+              </Text>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   )
 }

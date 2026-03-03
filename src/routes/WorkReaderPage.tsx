@@ -9,11 +9,11 @@ import {
   poemStanza,
   subtitle,
   surfaceCard,
+  titleGroup,
   workCoverImage,
   workDetailLayout,
 } from '@/styles/app.css'
 import { Text } from '@/ui/Text'
-import { textRole } from '@/ui/Text.css'
 import { NotFoundPage } from './NotFoundPage'
 
 function isValidWorkId(id: string): boolean {
@@ -35,22 +35,22 @@ export function WorkReaderPage() {
   return (
     <main className={page}>
       <header className={pageHeader}>
-        <div>
+        <div className={titleGroup}>
           <Text as="h1" roleType="title">
             {work.title}
           </Text>
-          <p className={subtitle}>시집 ID: {work.id}</p>
+          <p className={subtitle}>{work.teaser}</p>
         </div>
 
         <nav className={headerNav} aria-label="페이지 이동">
           <Link className={navLink} to="/">
-            랜딩
+            Home
           </Link>
           <Link className={navLink} to="/works">
-            메인
+            Archive
           </Link>
           <Link className={navLink} to="/about">
-            어바웃
+            About
           </Link>
         </nav>
       </header>
@@ -60,16 +60,18 @@ export function WorkReaderPage() {
 
         <section className={poemBlock} aria-label="글">
           {work.poem.stanzas.map((stanza) => (
-            <p key={stanza.id} className={`${textRole.poem} ${poemStanza}`}>
+            <div key={stanza.id} className={poemStanza}>
               {stanza.lines.join('\n')}
-            </p>
+            </div>
           ))}
         </section>
       </article>
 
-      <nav>
-        <Link to="/works">목록으로 돌아가기</Link>
-      </nav>
+      <footer style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <Link className={navLink} to="/works">
+          ← Back to Archive
+        </Link>
+      </footer>
     </main>
   )
 }

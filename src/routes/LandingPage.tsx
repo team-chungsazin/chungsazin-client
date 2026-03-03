@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom'
 import {
   ctaRow,
   headerNav,
+  heroSection,
   navLink,
   page,
   pageHeader,
   subtitle,
   surfaceCard,
+  titleGroup,
 } from '@/styles/app.css'
 import { LinkButton } from '@/ui/LinkButton'
 import { Text } from '@/ui/Text'
@@ -15,7 +17,7 @@ export function LandingPage() {
   return (
     <main className={page}>
       <header className={pageHeader}>
-        <div>
+        <div className={titleGroup}>
           <Text as="h1" roleType="display">
             ChungSazin
           </Text>
@@ -24,25 +26,29 @@ export function LandingPage() {
 
         <nav className={headerNav} aria-label="페이지 이동">
           <Link className={navLink} to="/works">
-            메인
+            Archive
           </Link>
           <Link className={navLink} to="/about">
-            어바웃
+            About
           </Link>
         </nav>
       </header>
 
-      <section className={surfaceCard}>
-        <Text as="h2" roleType="title">
-          랜딩 페이지
-        </Text>
-        <Text roleType="ui">
-          읽기(가독성)와 감각(리듬·여백)을 해치지 않는 인터랙션을 목표로 합니다.
-        </Text>
-        <nav className={ctaRow} aria-label="시작하기">
-          <LinkButton to="/works">시집 목록 보기</LinkButton>
-          <LinkButton to="/about">팀 소개 보기</LinkButton>
-        </nav>
+      <section className={heroSection}>
+        <div className={surfaceCard}>
+          <Text as="h2" roleType="title">
+            여백의 기록, 청사진
+          </Text>
+          <Text roleType="ui">
+            읽기(가독성)와 감각(리듬·여백)을 해치지 않는 인터랙션을 지향합니다.
+            <br />
+            당신의 일상에 잠시 머물다 가는 문장들이기를 바랍니다.
+          </Text>
+          <nav className={ctaRow} aria-label="시작하기">
+            <LinkButton to="/works">시집 목록 보기</LinkButton>
+            <LinkButton to="/about">작가 소개</LinkButton>
+          </nav>
+        </div>
       </section>
     </main>
   )

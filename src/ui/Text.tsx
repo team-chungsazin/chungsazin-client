@@ -6,10 +6,16 @@ type TextRole = keyof typeof textRole
 type TextProps<T extends ElementType> = {
   as?: T
   roleType?: TextRole
+  className?: string
   children: ReactNode
 }
 
-export function Text<T extends ElementType = 'p'>({ as, roleType = 'ui', children }: TextProps<T>) {
+export function Text<T extends ElementType = 'p'>({
+  as,
+  roleType = 'ui',
+  className = '',
+  children,
+}: TextProps<T>) {
   const Component = as ?? 'p'
-  return <Component className={textRole[roleType]}>{children}</Component>
+  return <Component className={`${textRole[roleType]} ${className}`}>{children}</Component>
 }
