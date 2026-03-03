@@ -1,53 +1,58 @@
 import { Link } from 'react-router-dom'
 import { works } from '@/data/works'
+import { useScroll } from '@/hooks/useScroll'
 import {
   headerNav,
   navLink,
   page,
   pageHeader,
+  pageHeaderHidden,
   subtitle,
   surfaceCard,
+  titleGroup,
   workCoverImage,
   workList,
   workListCard,
 } from '@/styles/app.css'
-import { LinkButton } from '@/ui/LinkButton'
 import { Text } from '@/ui/Text'
 
 export function WorksIndexPage() {
+  const { isScrollingUp } = useScroll()
+
   return (
     <main className={page}>
-      <header className={pageHeader}>
-        <div>
+      <header className={`${pageHeader} ${!isScrollingUp ? pageHeaderHidden : ''}`}>
+        <div className={titleGroup}>
           <Text as="h1" roleType="display">
             시집 목록
           </Text>
-          <Text roleType="caption">그리드에서 시집을 선택해 상세 페이지로 들어가세요.</Text>
+          <p className={subtitle}>시간이 머물다 간 문장들의 기록</p>
         </div>
 
         <nav className={headerNav} aria-label="페이지 이동">
           <Link className={navLink} to="/">
-            랜딩
+            Home
           </Link>
           <Link className={navLink} to="/about">
-            어바웃
+            About
           </Link>
         </nav>
       </header>
 
       <ul className={workList}>
         {works.map((work) => (
-          <li key={work.id} className={`${surfaceCard} ${workListCard}`}>
-            <img className={workCoverImage} src={work.cover.src} alt={work.cover.alt} />
-            <div>
-              <Text as="h2" roleType="title">
-                {work.title}
-              </Text>
-              <Text roleType="ui">{work.teaser}</Text>
-              <p className={subtitle}>
-                <LinkButton to={`/works/${work.id}`}>상세 보기</LinkButton>
-              </p>
-            </div>
+          <li key={work.id}>
+            <Link to={`/works/${work.id}`} className={`${surfaceCard} ${workListCard}`}>
+              <img className={workCoverImage} src={work.cover.src} alt={work.cover.alt} />
+              <div>
+                <Text as="h3" roleType="title">
+                  {work.title}
+                </Text>
+                <Text roleType="caption" className={subtitle}>
+                  {work.teaser}
+                </Text>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

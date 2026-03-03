@@ -1,7 +1,23 @@
 pre-commit:
   commands:
     lint:
-      run: pnpm lint
+      run: |
+        set -e
+
+        tmp="$(mktemp)"
+        trap 'rm -f "$tmp"' EXIT
+
+        # staged file list (null-delimited)
+        git diff --cached --name-only -z --diff-filter=ACMR > "$tmp"
+        if [ ! -s "$tmp" ]; then
+          exit 0
+        fi
+
+        # auto-fix staged files (format + organizeImports + safe fixes)
+        pnpm exec biome check --write --staged
+
+        # re-stage files that were already staged before auto-fix
+        xargs -0 git add -- < "$tmp"
 
 pre-push:
   commands:

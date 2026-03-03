@@ -14,7 +14,7 @@ Official web client for the ChungSazin poetry experience.
 | **Styling** | ![vanilla-extract](https://img.shields.io/badge/vanilla--extract-2E2E2E?style=for-the-badge) |
 | **UI Documentation** | ![Storybook](https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white) |
 | **Testing** | ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white) ![Testing Library](https://img.shields.io/badge/Testing_Library-E33332?style=for-the-badge&logo=testinglibrary&logoColor=white) |
-| **Observability Baseline** | ![Sentry](https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white) ![Google Analytics](https://img.shields.io/badge/Google_Analytics-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white) ![Microsoft Clarity](https://img.shields.io/badge/Microsoft_Clarity-008272?style=for-the-badge) ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=for-the-badge&logo=opentelemetry&logoColor=white) |
+| **Observability Baseline** | ![Sentry](https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white) ![Google Analytics](https://img.shields.io/badge/Google_Analytics-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white) ![Microsoft Clarity](https://img.shields.io/badge/Microsoft_Clarity-008272?style=for-the-badge) |
 | **Deployment Target** | ![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflarepages&logoColor=white) |
 
 ### Tooling

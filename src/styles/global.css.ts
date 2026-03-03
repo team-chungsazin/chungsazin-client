@@ -7,6 +7,7 @@ globalStyle(':root', {
   backgroundColor: vars.color.background,
   textRendering: 'optimizeLegibility',
   WebkitFontSmoothing: 'antialiased',
+  MozOsxFontSmoothing: 'grayscale',
 })
 
 globalStyle('*, *::before, *::after', {
@@ -18,17 +19,25 @@ globalStyle('body', {
   minWidth: '320px',
   minHeight: '100vh',
   fontSize: vars.text.ui,
-  lineHeight: 1.5,
+  lineHeight: 1.6,
+  letterSpacing: '-0.01em',
 })
 
 globalStyle('a', {
-  color: vars.color.accent,
-  transition: `color ${vars.motion.fast} ease`,
+  color: 'inherit',
+  textDecoration: 'none',
+  transition: `all ${vars.motion.medium} ease`,
 })
 
 globalStyle('a:focus-visible, button:focus-visible', {
   outline: `2px solid ${vars.color.focus}`,
   outlineOffset: '2px',
+})
+
+globalStyle('h1, h2, h3, h4, h5, h6', {
+  margin: 0,
+  fontWeight: 700,
+  lineHeight: 1.2,
 })
 
 globalStyle('*', {

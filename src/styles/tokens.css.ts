@@ -1,39 +1,71 @@
-import { createGlobalTheme } from '@vanilla-extract/css'
+import { createGlobalTheme, createThemeContract } from '@vanilla-extract/css'
 
-export const vars = createGlobalTheme(':root', {
+export const themeVars = createThemeContract({
   color: {
-    background: '#f4f4f2',
-    foreground: '#121212',
-    muted: '#5b5b58',
+    background: null,
+    foreground: null,
+    muted: null,
+    surface: null,
+    border: null,
+    accent: null,
+    focus: null,
+  },
+})
+
+export const vars = {
+  ...createGlobalTheme(':root', {
+    font: {
+      ui: 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+      poem: '"Nanum Myeongjo", "Iowan Old Style", "Times New Roman", serif',
+      display: '"Playfair Display", "Nanum Myeongjo", serif',
+    },
+    text: {
+      display: '3.5rem',
+      title: '1.75rem',
+      poem: '1.125rem',
+      caption: '0.9rem',
+      ui: '1rem',
+    },
+    space: {
+      xxs: '4px',
+      xs: '8px',
+      sm: '12px',
+      md: '20px',
+      lg: '32px',
+      xl: '64px',
+    },
+    radius: {
+      md: '12px',
+    },
+    motion: {
+      fast: '150ms',
+      medium: '300ms',
+      slow: '500ms',
+    },
+  }),
+  color: themeVars.color,
+}
+
+createGlobalTheme(':root', themeVars, {
+  color: {
+    background: '#fcfbf8',
+    foreground: '#212121',
+    muted: '#6b7280',
     surface: '#ffffff',
-    border: '#d9d9d3',
-    accent: '#1f4e79',
-    focus: '#2359a8',
+    border: '#e5e7eb',
+    accent: '#1e3a8a',
+    focus: '#3b82f6',
   },
-  font: {
-    ui: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    poem: '"Iowan Old Style", "Times New Roman", Times, serif',
-  },
-  text: {
-    display: '2rem',
-    title: '1.5rem',
-    poem: '1.125rem',
-    caption: '0.875rem',
-    ui: '1rem',
-  },
-  space: {
-    xxs: '4px',
-    xs: '8px',
-    sm: '12px',
-    md: '16px',
-    lg: '24px',
-    xl: '48px',
-  },
-  radius: {
-    md: '10px',
-  },
-  motion: {
-    fast: '120ms',
-    medium: '220ms',
+})
+
+createGlobalTheme(':root @media (prefers-color-scheme: dark)', themeVars, {
+  color: {
+    background: '#121212',
+    foreground: '#e5e7eb',
+    muted: '#9ca3af',
+    surface: '#1e1e1e',
+    border: '#2d2d2d',
+    accent: '#60a5fa',
+    focus: '#3b82f6',
   },
 })
