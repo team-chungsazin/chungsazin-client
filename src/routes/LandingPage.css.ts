@@ -1,4 +1,4 @@
-import { globalKeyframes, keyframes, style } from '@vanilla-extract/css'
+import { keyframes, style } from '@vanilla-extract/css'
 
 const breathe = keyframes({
   '0%, 100%': { transform: 'scale(1)', opacity: 0.6, filter: 'blur(20px)' },

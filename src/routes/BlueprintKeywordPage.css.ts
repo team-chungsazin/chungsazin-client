@@ -1,10 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css'
 
-const twinkle = keyframes({
-  '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
-  '50%': { opacity: 0.8, transform: 'scale(1.2)' },
-})
-
 const orbit = keyframes({
   '0%': { transform: 'rotate(0deg) translateX(10px) rotate(0deg)' },
   '100%': { transform: 'rotate(360deg) translateX(10px) rotate(-360deg)' },

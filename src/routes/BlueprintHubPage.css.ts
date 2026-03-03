@@ -1,9 +1,4 @@
-import { keyframes, style } from '@vanilla-extract/css'
-
-const lineGrow = keyframes({
-  '0%': { width: '0%' },
-  '100%': { width: '100%' },
-})
+import { style } from '@vanilla-extract/css'
 
 export const hubContainer = style({
   backgroundColor: '#f9f9f9',
@@ -49,6 +44,9 @@ export const sectionList = style({
 export const sectionRow = style({
   display: 'flex',
   alignItems: 'center',
+  width: '100%',
+  color: 'inherit',
+  textDecoration: 'none',
   padding: '2.5rem 0',
   borderBottom: '1px solid rgba(0,0,0,0.05)',
   cursor: 'pointer',
