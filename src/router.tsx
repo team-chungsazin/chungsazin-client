@@ -34,6 +34,14 @@ export const appRoutes: RouteObject[] = [
     element: <AboutPage />,
   },
   {
+    path: '/about/project',
+    element: <AboutPage mode="project" />,
+  },
+  {
+    path: '/about/team/:id',
+    element: <AboutPage mode="team-member" />,
+  },
+  {
     path: '/works/:id',
     element: <WorkReaderPage />,
   },

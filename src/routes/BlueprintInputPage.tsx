@@ -40,14 +40,14 @@ export function BlueprintInputPage() {
 
   const config = INPUT_CONFIG[section]
 
+  if (!config) return null
+
   const handleSubmit = () => {
     if (value.trim()) {
       // TODO: 전역 상태나 Context에 value 저장 로직 추가 필요
       navigate(config.nextPath, { state: { readerName } })
     }
   }
-
-  if (!config) return null
 
   return (
     <main className={s.container}>

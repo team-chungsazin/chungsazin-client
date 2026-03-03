@@ -14,71 +14,86 @@ export function LandingPage() {
 
   return (
     <main className={s.landingContainer}>
-      <section className={s.scene}>
-        <div className={s.starGlow} />
-        <h2 className={s.poeticSentence}>
-          반가워요! <br />
-          <span style={{ fontSize: '1.2rem', opacity: 0.6 }}>저는 아름이라고 해요</span>
-        </h2>
-      </section>
+      {/* 배경 별 무리 */}
+      <div className={s.starLayer1} aria-hidden="true" />
+      <div className={s.starLayer2} aria-hidden="true" />
+      <div className={s.starLayer3} aria-hidden="true" />
 
       <section className={s.scene}>
-        <div className={s.starGlow} style={{ animationDelay: '1s', backgroundColor: '#34d399' }} />
-        <h2 className={s.poeticSentence}>
-          혹시 알고 있나요? <br />이 책의 <span className={s.greenHighlight}>진짜 주인공</span>은...
-        </h2>
-      </section>
-
-      <section className={s.scene}>
-        <h2 className={s.poeticSentence} style={{ fontSize: '3.5rem', fontWeight: 200 }}>
-          작가도
+        <div className={s.guideStar} />
+        <h2 className={s.poeticText}>
+          어둠뿐인 심연 속에서
           <br />
-          저도 아닌
-          <br />
-          <span style={{ fontWeight: 400 }}>바로 당신</span>이라는 걸요
+          <span style={{ fontSize: '1.2rem', opacity: 0.5 }}>당신의 목소리가 들려옵니다</span>
         </h2>
       </section>
 
       <section className={s.scene}>
-        <div className={s.highlightCard}>
-          <p>당신은 어떤 과거의 기억을 가지고 왔나요?</p>
-          <p>
-            <span className={s.greenHighlight}>현재</span>에서 초록 우는 별들을 만나고
+        <h2 className={s.poeticText}>
+          혹시 알고 있나요?
+          <br />이 우주의 <span className={s.highlight}>진짜 주인공</span>은...
+        </h2>
+      </section>
+
+      <section className={s.scene}>
+        <h2 className={s.poeticText} style={{ transform: 'translateZ(150px)' }}>
+          작가도,
+          <br />
+          아름이인 저도 아닌,
+          <br />
+          <span
+            style={{
+              fontSize: '4.5rem',
+              fontWeight: 300,
+              display: 'block',
+              marginTop: '1.5rem',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            바로 당신
+          </span>
+        </h2>
+      </section>
+
+      <section className={s.scene}>
+        <div className={s.abyssMirror}>
+          <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem' }}>
+            당신은 어떤 과거 의 기억을 가지고 왔나요?
           </p>
-          <p>책장을 덮은 후에는 미래의 청사진을 그려봅시다</p>
+          <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem' }}>
+            <span className={s.highlight}>현재</span>에서 초록 우는 별들을 만나고
+          </p>
+          <p style={{ fontSize: '1.2rem' }}>책장을 덮은 후에는 미래의 청사진을 그려봅시다</p>
         </div>
       </section>
 
       <section className={s.scene}>
         <h1
           style={{
-            fontSize: '4rem',
-            marginBottom: '0.5rem',
-            fontWeight: 200,
-            letterSpacing: '-0.05em',
+            fontSize: '1rem',
+            letterSpacing: '0.6em',
+            opacity: 0.4,
+            marginBottom: '2.5rem',
+            textTransform: 'uppercase',
           }}
+        >
+          ChungSazin
+        </h1>
+        <h2
+          className={s.poeticText}
+          style={{ fontSize: '3.5rem', marginBottom: '5rem', fontWeight: 300 }}
         >
           초록 우는 별들
-        </h1>
-        <p
-          style={{
-            opacity: 0.4,
-            letterSpacing: '0.3em',
-            textTransform: 'uppercase',
-            fontSize: '0.8rem',
-          }}
-        >
-          Blueprint of youth
-        </p>
+        </h2>
 
-        <div className={s.nameInputContainer}>
+        <div className={s.inputContainer}>
           <input
             type="text"
-            className={s.inputField}
-            placeholder="이름을 입력해주세요"
+            className={s.futuristicInput}
+            placeholder="이름을 알려주세요"
             value={readerName}
             onChange={(e) => setReaderName(e.target.value)}
-            aria-label="이름 입력"
+            spellCheck={false}
           />
           <button
             type="button"
@@ -86,7 +101,7 @@ export function LandingPage() {
             disabled={!readerName.trim()}
             onClick={handleStart}
           >
-            Enter the blueprint
+            시작하기
           </button>
         </div>
       </section>
