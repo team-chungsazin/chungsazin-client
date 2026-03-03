@@ -1,0 +1,19 @@
+---
+name: "🎨 스타일"
+about: "UI/UX 스타일 변경"
+title: "[style] "
+labels: "🎨 스타일"
+assignees: "maehwasoo"
+---
+
+## 📄 Description
+
+스타일(UI/UX) 관련 내용을 작성해 주세요. (무엇을, 왜, 어떻게 바꿀지)
+
+## ✅ Tasks
+
+- [ ]
+
+## 📎 ETC
+
+- (디자인 시안/스크린샷/스타일 가이드/브랜드 컬러 등)
