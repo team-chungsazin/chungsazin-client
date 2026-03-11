@@ -22,24 +22,15 @@ export function AboutPage({ mode = 'overview' }: AboutPageProps) {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const handleProjectClick = () => {
-    navigate('/about/project')
-  }
-
   const renderOverview = () => (
     <div className={styles.aboutContent}>
-      <button
-        type="button"
-        className={styles.introSection}
-        onClick={handleProjectClick}
-        aria-label="프로젝트 소개 상세보기"
-      >
+      <Link to="/about/project" className={styles.introSection} aria-label="프로젝트 소개 상세보기">
         <Text as="h2" roleType="title" style={{ marginBottom: '1rem' }}>
           프로젝트 소개
         </Text>
         <img src={aboutData.project.heroMedia} alt="Project Hero" className={styles.heroImage} />
         <Text roleType="ui">{aboutData.project.oneLine}</Text>
-      </button>
+      </Link>
 
       <section>
         <Text as="h2" roleType="title" style={{ marginBottom: '1.5rem' }}>

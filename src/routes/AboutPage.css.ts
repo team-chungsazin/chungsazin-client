@@ -9,16 +9,12 @@ export const aboutContent = style({
 })
 
 export const introSection = style({
-  appearance: 'none',
-  background: 'transparent',
-  border: 'none',
-  padding: 0,
   color: 'inherit',
-  font: 'inherit',
   textAlign: 'left',
   display: 'block',
   width: '100%',
   cursor: 'pointer',
+  textDecoration: 'none',
   transition: `transform ${vars.motion.medium} ease`,
   ':hover': {
     transform: 'translateY(-4px)',
